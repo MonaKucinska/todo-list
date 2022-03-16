@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  --primary-green: #52a163;
+  --white: #fff;
+  --secondary-green: #82c190;
+  --black: #000;
+  --red: #dd7558;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: linear-gradient(120deg, #dad299, #b0dab9);
+  min-height: 100vh;
+  color: var(--white);
+  font-family: "Open Sans", sans-serif;
+}
+
+.header {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.header__title {
+  padding: 1.5rem;
+}
+
+.header__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__input,
+.form__button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: var(--white);
+}
+.form__button {
+  color: var(--primary-green);
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form__button:hover {
+  background: var(--secondary-green);
+  color: var(--white);
+}
+
+/* Reset default select styling */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  border: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+/* Create custom select styling */
+select {
+  color: var(--primary-green);
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+
+.form__select-div {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__select {
+  padding: 1rem;
+}
+
+.form__select-div::after {
+  content: "\25BC";
+  position: absolute;
+  right: 0;
+  padding: 0.5rem;
+  background: var(--primary-green);
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo__list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.list__item {
+  margin: 0.5rem;
+  background: var(--white);
+  color: var(--black);
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.item__text {
+  flex: 1;
+  padding: 0, 0.5rem;
+}
+
+.item__button--complete,
+.item__button--delete {
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.item__button--complete {
+  background: var(--secondary-green);
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+/* Mark completed tasks */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* Delete animation */
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
